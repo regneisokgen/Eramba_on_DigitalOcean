@@ -89,7 +89,8 @@ May need to run `sudo snap connect doctl:kube-config` if this is needed, you’l
 Grab the IP (will be used to create domain) 
 
 - The IP should work (The one labelled as external IP)
-![IMG_9419](https://github.com/regneisokgen/Eramba_on_DigitalOcean/assets/54826294/c57ad2a6-518e-43ca-ae49-b6f74db6bcdd)
+![Screen Shot 2022-01-27 at 2 17 41 PM](https://github.com/regneisokgen/Eramba_on_DigitalOcean/assets/54826294/114d694f-0679-4530-9abb-4b68b89debe6)
+
 
 Once the domain is created, the ns should be changed to digitalocean’s. An A record will then be created for that domain and IP. 
 
