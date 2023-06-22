@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: eramba-web
+  namespace: eramba-2
+  labels:
+    app.kubernetes.io/name: eramba-web2
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/name: eramba-web2
+  type: LoadBalancer
+...
+

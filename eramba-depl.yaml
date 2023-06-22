@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eramba-web2
+  namespace: eramba-2
+  labels:
+    app.kubernetes.io/name: eramba-web2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: eramba-web2
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: eramba-web2
+    spec:
+      containers:
+      - name: eramba-web2
+        image: deveramba/eramba-test
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: MYSQL_HOSTNAME
+          value: eramba-mariadb
+        - name: MYSQL_DATABASE
+          value: erambadb
+        - name: MYSQL_USER
+          value: root
+        - name: MYSQL_PASSWORD
+          value: eramba
+        - name: DATABASE_PREFIX
+          value: ""
+        ports:
+        - containerPort: 8080
+---

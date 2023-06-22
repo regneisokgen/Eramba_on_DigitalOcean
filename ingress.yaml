@@ -1,0 +1,21 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: eramba
+  namespace: eramba-2
+  annotations:
+     kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - http:
+       paths:
+       - backend:
+           service:
+             name: eramba-web2
+             port:
+               number: 8080
+         path: /
+         pathType: ImplementationSpecific
+---
+
