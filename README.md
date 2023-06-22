@@ -87,23 +87,22 @@ May need to run `sudo snap connect doctl:kube-config` if this is needed, you’l
 Grab the IP (will be used to create domain) 
 
 - The IP should work
-
-![Screen Shot 2022-01-27 at 2.17.41 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3be7f8c3-b746-4327-94ce-dce59adfded3/Screen_Shot_2022-01-27_at_2.17.41_PM.png)
+<img width="1440" alt="Screen Shot 2022-01-27 at 2 17 41 PM" src="https://github.com/regneisokgen/Eramba_on_DigitalOcean/assets/54826294/c054cd6c-600a-478a-a982-639c8e4d6e85">
 
 Once the domain is created, the ns should be changed to digitalocean’s. An A record will then be created for that domain and IP. 
 
 ## Deploy multiple instances
 
 1. Right after deploying the `eramba-web.yaml` file, `kubectl create -f`  another yam file for the ingress resource. Except, the host will be a subdomain (the example yaml file is `eramba-anotherinstance-ingress.yaml` on TD laptop /desktop) 
-2. Create a CNAME record on digitalocean (note that currently, there is a CNAME record of *.grc.hut6.ca on goDaddy) 
-
-![Screen Shot 2022-01-27 at 3.47.13 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/21a5e8de-8621-4e3a-99ea-1e9fd4024696/Screen_Shot_2022-01-27_at_3.47.13_PM.png)
+2. Create a CNAME record on digitalocean (for example, there is a CNAME record of *.example.application.ca on goDaddy) 
+   
+<img width="1157" alt="Screen Shot 2022-01-27 at 3 47 13 PM" src="https://github.com/regneisokgen/Eramba_on_DigitalOcean/assets/54826294/67227b65-9653-4928-8baf-cffd85b8e957">
 
 ## For TLS deployment
 
 The following to to provide TLS to deployed application instances on digitalocean (followed by above deployment steps)
 
-- I recommend making sure the instance is properly deployed and accessible via *.grc.hut6.ca before following the below steps for TLS
+- I recommend making sure the instance is properly deployed and accessible via *.example.application.ca before following the below steps for TLS
 1. If the cluster does not have a cert-manager, install it using https://cert-manager.io/docs/installation/helm/#4-install-cert-manager
 2. Config a Let’s Encrypt Issuer (the type of `ClusterIssuer`). You can use the `eramba-cluster-cert-manager.yaml` file to deploy it. 
     1. You may change the server parameter to the staging Let’s Encrypt url for testing. 
