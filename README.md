@@ -1,6 +1,8 @@
 # Eramba_on_DigitalOcean
 Leveraging DigitalOcean to serve multi-tenant Eramba GRC software based on namespaces in one K8S cluster
 
+⚠️⚠️⚠️PLEASE PERFORM SECURITY PENETRATION TESTING IF YOU ARE DEPLOYING THIS TO PRODUCTION⚠️⚠️⚠️
+
 # Eramba Deployment on DO
 
 On the ubuntu VM
