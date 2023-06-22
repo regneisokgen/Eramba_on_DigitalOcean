@@ -1,2 +1,0 @@
-helm upgrade -i eramba bitnami/mariadb --set auth.rootUsername=root,auth.rootPassword=Bjwhebf-hbfjwef-kwebf,auth.database=erambadb,initdbScriptsConfigMap=eramba2,volumePermissions.enabled=true,mariadb.volumePermissions.enabled=true,primary.existingConfigmap=eramba2cm --namespace eramba-1 --set mariadb.volumePermissions.enabled=true --set data.persistence.storageClass=do-block-storage
-
