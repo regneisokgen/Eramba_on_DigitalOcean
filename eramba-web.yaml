@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: eramba-web2
-        image: deveramba/eramba-test2:latest
+        image: #put your own Eramba dockerized container here
         imagePullPolicy: IfNotPresent
         env:
         - name: MYSQL_HOSTNAME
